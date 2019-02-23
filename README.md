@@ -9,12 +9,12 @@ This will produce a csv file containing results per municipality.
 
 Example:
 
-<codeblock>
+```python
 from kiesraad import scrape
 
 scrape.scrape('TK20170315')
 df = scrape.parse_downloaded_pages('TK20170315')
-</codeblock>
+```
 
 
 # Parse EML files
@@ -23,7 +23,7 @@ This will produce csv files for each municipality, containing results at polling
 
 Example:
 
-<codeblock>
+```python
 from pathlib import Path
 import pandas as pd
 from kiesraad import parse_eml
@@ -35,7 +35,7 @@ target.mkdir(exist_ok=True)
 for name, df in dfs.items():
     path = target / f'{name}.csv'
     df.to_csv(path, index=False)
-</codeblock>
+```
 
 # Caveat
 
