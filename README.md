@@ -49,4 +49,4 @@ Please check the results; they are not guaranteed to be accurate.
 [eml]:https://dirkmjk.nl/en/2018/07/converting-election-markup-language-eml-csv
 [portal]:https://data.overheid.nl/data/dataset?maintainer_facet=http%3A%2F%2Fstandaarden.overheid.nl%2Fowms%2Fterms%2FKiesraad
 [uitslagen]:https://www.verkiezingsuitslagen.nl/
-[background]:https://twitter.com/Jossedevoogd/status/1103407097109188608
+[background]:https://dirkmjk.nl/p/verkiezingskaart/
