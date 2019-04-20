@@ -16,6 +16,12 @@ scrape.scrape('TK20170315')
 df = scrape.parse_downloaded_pages('TK20170315')
 ```
 
+If you want to extract seats instead of votes:
+
+```python
+df = scrape.parse_downloaded_pages('TK20170315', unit='seats')
+```
+
 
 # Parse EML files
 

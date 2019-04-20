@@ -5,7 +5,7 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 setup(name='kiesraad',
-    version='0.0.0',
+    version='0.0.1',
     description='Scrape and parse Dutch election results',
     long_description=README,
     long_description_content_type="text/markdown",

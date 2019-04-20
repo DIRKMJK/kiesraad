@@ -148,7 +148,8 @@ def scrape(election, url=None, data_folder=DATA_FOLDER, max_tries=15):
     browser.close()
 
 
-def parse_downloaded_pages(election, data_folder=DATA_FOLDER, remove_html=True):
+def parse_downloaded_pages(election, data_folder=DATA_FOLDER,
+                           remove_html=True, unit='votes'):
 
     """Parse html files
 
@@ -161,6 +162,8 @@ def parse_downloaded_pages(election, data_folder=DATA_FOLDER, remove_html=True):
 
     """
 
+    if unit not in ['votes', 'seats']:
+        raise ValueError('unit must be votes or seats')
     data = []
     if not isinstance(data_folder, PosixPath):
         data_folder = Path(data_folder)
@@ -181,7 +184,14 @@ def parse_downloaded_pages(election, data_folder=DATA_FOLDER, remove_html=True):
         divs = [d for d in soup.findAll('div') if 'partij-naam' in str(d)]
         for div in divs:
             partij = div.find('h4', class_='partij-naam').text
-            value = div.find('span', class_='value').text
+            if unit == 'votes':
+                value = div.find('span', class_='value').text
+            else:
+                values = div.findAll('span', class_='value')
+                if len(values) > 1:
+                    value = values[-1].text
+                else:
+                    value = '0'
             item[partij] = string_to_int(value)
         data.append(item)
     df = pd.DataFrame(data)
