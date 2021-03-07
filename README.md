@@ -5,6 +5,12 @@ The Dutch election council publishes election results in two formats:
 
 [Background][background] (in Dutch)
 
+# Prerequisites
+You will need to have Python 3 installed, and the following libraries:
+```sh
+pip3 install pandas xmltodict selenium bs4
+```
+
 # Scrape Verkiezingsuitslagen website
 
 This will produce a csv file containing results per municipality.
@@ -33,7 +39,6 @@ Example:
 
 ```python
 from pathlib import Path
-import pandas as pd
 from kiesraad import parse_eml
 
 source = Path('../data/TK2017')
