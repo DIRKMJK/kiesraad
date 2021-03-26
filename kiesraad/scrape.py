@@ -180,7 +180,7 @@ def parse_downloaded_pages(election, data_folder=DATA_FOLDER,
         values = algemeen.findAll('span', class_='value')
         values = [string_to_int(v.text) for v in values]
         (item['Kiesgerechtigden'], item['Opkomst'],
-         item['Blanco'], item['Ongeldig']) = values
+         item['Blanco'], item['Ongeldig']) = values[:4]
         divs = [d for d in soup.findAll('div') if 'partij-naam' in str(d)]
         for div in divs:
             partij = div.find('h4', class_='partij-naam').text
