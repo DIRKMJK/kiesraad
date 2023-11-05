@@ -7,6 +7,7 @@ from pathlib import Path, PosixPath
 import pandas as pd
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup as bs
 
 XPATH_PROVINCES = '//*[@id="search"]/div/div[1]/div'
@@ -45,8 +46,8 @@ def count_options(xpath, browser, max_tries):
     while tries < max_tries:
 
         try:
-            element = browser.find_element_by_xpath(xpath)
-            count = len(element.find_elements_by_tag_name('option'))
+            element = browser.find_element(By.XPATH, xpath)
+            count = len(element.find_elements(By.TAG_NAME, 'option'))
             if count > 1:
                 return count
         except NoSuchElementException:
@@ -73,8 +74,8 @@ def click_option(xpath, i, browser, max_tries):
     tries = 0
     while tries < max_tries:
         try:
-            element = browser.find_element_by_xpath(xpath)
-            options = element.find_elements_by_tag_name('option')
+            element = browser.find_element(By.XPATH, xpath)
+            options = element.find_elements(By.TAG_NAME, 'option')
             options[i].click()
             return options[i].text
         except:
