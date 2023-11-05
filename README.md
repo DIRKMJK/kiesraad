@@ -33,7 +33,7 @@ df = scrape.parse_downloaded_pages('TK20170315', unit='seats')
 
 # Parse EML files
 
-This will produce csv files for each municipality, containing results at polling station level. If desired, these can include votes per candidate.
+This will produce csv files for each municipality, containing results at polling station level. If desired, these can include votes per candidate. Note that you’ll first need to download the EML files from the government’s [data portal][portal].
 
 Example:
 
