@@ -58,6 +58,6 @@ Please check the results; they are not guaranteed to be accurate.
 
 [scrape]:https://dirkmjk.nl/en/2018/05/how-use-python-and-selenium-scraping-election-results
 [eml]:https://dirkmjk.nl/en/2018/07/converting-election-markup-language-eml-csv
-[portal]:https://data.overheid.nl/data/dataset?maintainer_facet=http%3A%2F%2Fstandaarden.overheid.nl%2Fowms%2Fterms%2FKiesraad
+[portal]:https://data.overheid.nl/community/organization/kiesraad
 [uitslagen]:https://www.verkiezingsuitslagen.nl/
 [background]:https://dirkmjk.nl/p/verkiezingskaart/

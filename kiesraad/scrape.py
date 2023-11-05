@@ -24,7 +24,10 @@ def string_to_int(string):
 
     """
 
+    string = re.sub(r'\,([0-9]{3})', r'\1', string)
+    string = re.sub(r'\.([0-9]{3})', r'\1', string)
     string = string.replace('.', '')
+    string = string.replace(',', '')
     string = string.split('(')[0].strip()
     return int(string)
 
